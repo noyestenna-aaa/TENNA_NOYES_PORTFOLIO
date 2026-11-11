@@ -17,22 +17,62 @@
       <a href="writing-samples.html">Writing Samples</a>
     </nav>
   </header>
+
   <main class="content">
     <p class="eyebrow">Background</p>
     <h1>Education</h1>
-    <p class="intro">My academic background and learning journey.</p>
+    <p class="intro">My academic journey and continuing professional learning.</p>
+
     <section class="card" aria-labelledby="education-details">
       <h2 id="education-details">Education details</h2>
-      <ul>
-        <li><strong>High-school Diploma</strong> at Manti High-school — 2023</li>
-        <li><strong>Associates degree in Computer Science and Technology</strong> at Snow College — 2023-2025</li>
-        <li><strong>Bachelors degree in Technical and Professional writing</strong> at Utah Tech University — 2026-Present</li>
-        <li><strong>UX Design Certificate</strong> from Google</li>
-        <li><strong>CITI Training Certificate</strong></li>
+
+      <ul class="education-list">
+        <li class="education-item">
+          <span class="edu-year">2023</span>
+          <div class="edu-copy">
+            <h3>High School Diploma</h3>
+            <p>Manti High School</p>
+          </div>
+        </li>
+
+        <li class="education-item">
+          <span class="edu-year">2023–2025</span>
+          <div class="edu-copy">
+            <h3>Associate's Degree in Computer Science and Technology</h3>
+            <p>Snow College</p>
+          </div>
+        </li>
+
+        <li class="education-item">
+          <span class="edu-year">2026–Present</span>
+          <div class="edu-copy">
+            <h3>Bachelor's Degree in Technical and Professional Writing</h3>
+            <p>Utah Tech University</p>
+          </div>
+        </li>
+
+        <li class="education-item">
+          <span class="edu-year">2024</span>
+          <div class="edu-copy">
+            <h3>UX Design Certificate</h3>
+            <p>Google</p>
+          </div>
+        </li>
+
+        <li class="education-item">
+          <span class="edu-year">Completed</span>
+          <div class="edu-copy">
+            <h3>CITI Training Certificate</h3>
+          </div>
+        </li>
       </ul>
     </section>
   </main>
-  <footer><p>© <span id="year"></span> Tenna Noyes</p></footer>
+
+  <footer>
+    <p>© <span id="year"></span> Tenna Noyes</p>
+  </footer>
+
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -107,6 +107,11 @@ h2 {
   font-size: 1.25rem;
 }
 
+h3 {
+  margin: 0 0 .2rem;
+  font-size: 1.06rem;
+}
+
 .intro {
   max-width: 650px;
   margin: 1.25rem 0 2rem;
@@ -142,6 +147,40 @@ h2 {
   color: var(--muted);
 }
 
+.education-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.education-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.education-item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.edu-year {
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.edu-copy p {
+  margin-top: .15rem;
+}
+
 footer {
   padding: 1.25rem clamp(1.25rem, 6vw, 5rem);
   border-top: 1px solid var(--line);
@@ -171,5 +210,10 @@ footer p {
   .content {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
+  }
+
+  .education-item {
+    grid-template-columns: 1fr;
+    gap: .25rem;
   }
 }
