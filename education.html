@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Education and academic background of Tenna Noyes.">
+  <meta name="theme-color" content="#070a08">
   <title>Education | Tenna Noyes</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="index.html">Tenna Noyes<span>Portfolio</span></a>
     <nav aria-label="Main navigation">
@@ -18,14 +20,13 @@
     </nav>
   </header>
 
-  <main class="content">
+  <main class="content" id="main">
     <p class="eyebrow">Background</p>
     <h1>Education</h1>
     <p class="intro">My academic journey and continuing professional learning.</p>
 
     <section class="card" aria-labelledby="education-details">
       <h2 id="education-details">Education details</h2>
-
       <ul class="education-list">
         <li class="education-item">
           <span class="edu-year">2023</span>
@@ -34,7 +35,6 @@
             <p>Manti High School</p>
           </div>
         </li>
-
         <li class="education-item">
           <span class="edu-year">2023–2025</span>
           <div class="edu-copy">
@@ -42,7 +42,6 @@
             <p>Snow College</p>
           </div>
         </li>
-
         <li class="education-item">
           <span class="edu-year">2026–Present</span>
           <div class="edu-copy">
@@ -50,17 +49,15 @@
             <p>Utah Tech University</p>
           </div>
         </li>
-
         <li class="education-item">
-          <span class="edu-year">2024</span>
+          <span class="edu-year">Certificate</span>
           <div class="edu-copy">
             <h3>UX Design Certificate</h3>
             <p>Google</p>
           </div>
         </li>
-
         <li class="education-item">
-          <span class="edu-year">Completed</span>
+          <span class="edu-year">Certificate</span>
           <div class="edu-copy">
             <h3>CITI Training Certificate</h3>
           </div>
@@ -69,10 +66,7 @@
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Tenna Noyes</p>
-  </footer>
-
+  <footer><p>© <span id="year"></span> Tenna Noyes</p></footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
