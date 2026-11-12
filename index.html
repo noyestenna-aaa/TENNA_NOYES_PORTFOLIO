@@ -22,10 +22,71 @@
   <main class="hero" id="main">
     <p class="eyebrow">Welcome</p>
     <h1>Hi, I’m Tenna Noyes.</h1>
-    <p class="intro">I’m a technical writer, author, and UX designer dedicated to creating clear, user-centered documentation and intuitive digital experiences. I’m currently pursuing a bachelor’s degree in Technical and Professional Writing while building toward a career as an API technical writer, and I plan to continue my education in astrophysics and astronomy as I grow in this field. Outside of work and study, I enjoy drawing, reading, and hiking with my dog, Joey.</p>
+    <p class="intro">I’m a technical writer, author, and UX designer dedicated to creating clear, user-centered documentation and intuitive digital experiences. I’m currently pursuing a bachelor’s degree in Technical and Professional Writing while building thoughtful, user-friendly design experiences.</p>
     <a class="button" href="work-experience.html">Explore my experience</a>
   </main>
   <footer><p>© <span id="year"></span> Tenna Noyes</p></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const body = document.body;
+      body.classList.add('is-ready');
+
+      const cursor = document.createElement('div');
+      cursor.classList.add('cursor');
+      document.body.appendChild(cursor);
+
+      const moveCursor = (event) => {
+        cursor.style.left = `${event.clientX}px`;
+        cursor.style.top = `${event.clientY}px`;
+      };
+
+      document.addEventListener('pointermove', moveCursor);
+
+      const clickableSelectors = [
+        'a',
+        'button',
+        'input',
+        'textarea',
+        'select',
+        '.button',
+        '.card',
+        '.brand',
+        'nav a'
+      ];
+
+      clickableSelectors.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((element) => {
+          element.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
+          element.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
+        });
+      });
+
+      document.querySelectorAll('a[href]').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+          return;
+        }
+
+        const isPageLink = href.endsWith('.html') || !href.includes('://');
+        if (!isPageLink) {
+          return;
+        }
+
+        link.addEventListener('click', (event) => {
+          if (link.target === '_blank') return;
+
+          event.preventDefault();
+          body.classList.remove('is-ready');
+          body.classList.add('page-transition');
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 220);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
