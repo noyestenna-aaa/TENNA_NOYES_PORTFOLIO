@@ -22,13 +22,96 @@
   <main class="content" id="main">
     <p class="eyebrow">Career</p>
     <h1>Work Experience</h1>
-    <p class="intro">A selection of my professional roles and experience.</p>
+    <p class="intro">Experience in writing support, editing, and administrative service.</p>
     <section class="card" aria-labelledby="experience-details">
-      <h2 id="experience-details">Experience details</h2>
-      <p>Professional experience details will be added here.</p>
+      <h2 id="experience-details">Professional experience</h2>
+      <ul class="education-list experience-list">
+        <li class="education-item">
+          <span class="edu-year">3 years</span>
+          <div class="edu-copy">
+            <h3>Freelance Writing Tutor</h3>
+            <p>Provided one-on-one writing support to help learners strengthen their writing skills.</p>
+          </div>
+        </li>
+        <li class="education-item">
+          <span class="edu-year">3 years</span>
+          <div class="edu-copy">
+            <h3>Freelance Editor</h3>
+            <p>Edited written materials for clarity, grammar, and consistency.</p>
+          </div>
+        </li>
+        <li class="education-item">
+          <span class="edu-year">10 months</span>
+          <div class="edu-copy">
+            <h3>Administrative Assistant &amp; Receptionist</h3>
+            <p>Supported administrative operations and provided front-desk assistance.</p>
+          </div>
+        </li>
+      </ul>
     </section>
   </main>
   <footer><p>© <span id="year"></span> Tenna Noyes</p></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const body = document.body;
+      body.classList.add('is-ready');
+
+      const cursor = document.createElement('div');
+      cursor.classList.add('cursor');
+      document.body.appendChild(cursor);
+
+      const moveCursor = (event) => {
+        cursor.style.left = `${event.clientX}px`;
+        cursor.style.top = `${event.clientY}px`;
+      };
+
+      document.addEventListener('pointermove', moveCursor);
+
+      const clickableSelectors = [
+        'a',
+        'button',
+        'input',
+        'textarea',
+        'select',
+        '.button',
+        '.card',
+        '.brand',
+        'nav a'
+      ];
+
+      clickableSelectors.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((element) => {
+          element.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
+          element.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
+        });
+      });
+
+      document.querySelectorAll('a[href]').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+          return;
+        }
+
+        const isPageLink = href.endsWith('.html') || !href.includes('://');
+        if (!isPageLink) {
+          return;
+        }
+
+        link.addEventListener('click', (event) => {
+          if (link.target === '_blank') return;
+
+          event.preventDefault();
+          body.classList.remove('is-ready');
+          body.classList.add('page-transition');
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 220);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
