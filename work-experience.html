@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Professional experience of Tenna Noyes.">
+  <meta name="description" content="Education and academic background of Tenna Noyes.">
   <meta name="theme-color" content="#070a08">
-  <title>Work Experience | Tenna Noyes</title>
+  <title>Education | Tenna Noyes</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,111 +14,59 @@
     <a class="brand" href="index.html">Tenna Noyes<span>Portfolio</span></a>
     <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <a href="education.html">Education</a>
-      <a aria-current="page" href="work-experience.html">Work Experience</a>
+      <a aria-current="page" href="education.html">Education</a>
+      <a href="work-experience.html">Work Experience</a>
       <a href="writing-samples.html">Writing Samples</a>
     </nav>
   </header>
+
   <main class="content" id="main">
-    <p class="eyebrow">Career</p>
-    <h1>Work Experience</h1>
-    <p class="intro">Experience in writing support, editing, and administrative service.</p>
-    <section class="card" aria-labelledby="experience-details">
-      <h2 id="experience-details">Professional experience</h2>
-      <ul class="education-list experience-list">
+    <p class="eyebrow">Background</p>
+    <h1>Education</h1>
+    <p class="intro">My academic journey and continuing professional learning.</p>
+
+    <section class="card" aria-labelledby="education-details">
+      <h2 id="education-details">Education details</h2>
+      <ul class="education-list">
         <li class="education-item">
-          <span class="edu-year">Aug 2026–Dec 2026</span>
+          <span class="edu-year">2023</span>
           <div class="edu-copy">
-            <h3>Managing Editor and Website Designer</h3>
-            <p>Route 7 Review Journal</p>
+            <h3>High School Diploma</h3>
+            <p>Manti High School</p>
           </div>
         </li>
         <li class="education-item">
-          <span class="edu-year">2023–2026</span>
+          <span class="edu-year">2023–2025</span>
           <div class="edu-copy">
-            <h3>Freelance Writing Tutor</h3>
-            <p>Provided one-on-one writing support to help learners strengthen their writing skills.</p>
+            <h3>Associate's Degree in Computer Science and Technology</h3>
+            <p>Snow College</p>
           </div>
         </li>
         <li class="education-item">
-          <span class="edu-year">2023–2026</span>
+          <span class="edu-year">2026–Present</span>
           <div class="edu-copy">
-            <h3>Freelance Editor</h3>
-            <p>Edited written materials for clarity, grammar, and consistency.</p>
+            <h3>Bachelor's Degree in Technical and Professional Writing</h3>
+            <p>Utah Tech University</p>
           </div>
         </li>
         <li class="education-item">
-          <span class="edu-year">February 2026 – Present</span>
+          <span class="edu-year">Certificate</span>
           <div class="edu-copy">
-            <h3>Administrative Assistant &amp; Receptionist</h3>
-            <p>Supported administrative operations and provided front-desk assistance.</p>
+            <h3>UX Design Certificate</h3>
+            <p>Google</p>
+          </div>
+        </li>
+        <li class="education-item">
+          <span class="edu-year">Certificate</span>
+          <div class="edu-copy">
+            <h3>CITI Training Certificate</h3>
           </div>
         </li>
       </ul>
     </section>
   </main>
+
   <footer><p>© <span id="year"></span> Tenna Noyes</p></footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const body = document.body;
-      body.classList.add('is-ready');
-
-      const cursor = document.createElement('div');
-      cursor.classList.add('cursor');
-      document.body.appendChild(cursor);
-
-      const moveCursor = (event) => {
-        cursor.style.left = `${event.clientX}px`;
-        cursor.style.top = `${event.clientY}px`;
-      };
-
-      document.addEventListener('pointermove', moveCursor);
-
-      const clickableSelectors = [
-        'a',
-        'button',
-        'input',
-        'textarea',
-        'select',
-        '.button',
-        '.card',
-        '.brand',
-        'nav a'
-      ];
-
-      clickableSelectors.forEach((selector) => {
-        document.querySelectorAll(selector).forEach((element) => {
-          element.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
-          element.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
-        });
-      });
-
-      document.querySelectorAll('a[href]').forEach((link) => {
-        const href = link.getAttribute('href');
-        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
-          return;
-        }
-
-        const isPageLink = href.endsWith('.html') || !href.includes('://');
-        if (!isPageLink) {
-          return;
-        }
-
-        link.addEventListener('click', (event) => {
-          if (link.target === '_blank') return;
-
-          event.preventDefault();
-          body.classList.remove('is-ready');
-          body.classList.add('page-transition');
-
-          setTimeout(() => {
-            window.location.href = href;
-          }, 220);
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
